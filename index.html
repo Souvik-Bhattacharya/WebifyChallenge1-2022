@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The #1 food delivery services in kolkata">
+    <title>King Chef</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #navbar {
+        display: flex;
+        position: sticky;
+        top: 0px;
+    }
+
+    #navbar::before {
+        content: "";
+        background-color: black;
+        position: absolute;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        opacity: 0.7;
+    }
+
+    #logo {
+        margin: 7px;
+        display: inline-block;
+    }
+
+    #logo img {
+        height: 45px;
+    }
+
+    #title {
+        display: inline-block;
+        color: darkorange;
+        font-weight: bolder;
+        font-family: 'Lobster', cursive, Arial;
+        font-size: 22px;
+        height: 40px;
+        margin: 13px 8px;
+    }
+
+    #nav {
+        display: flex;
+
+    }
+
+    #nav li {
+        list-style: none;
+        margin: 17px 20px;
+    }
+
+    #nav li a {
+        text-decoration: none;
+        color: white;
+        padding: 9px 14px;
+        font-weight: bold;
+    }
+
+    #nav li a:hover {
+        background-color: whitesmoke;
+        color: black;
+        border-radius: 30px;
+    }
+
+    #home::before {
+        content: "";
+        background: url('home.jpg') no-repeat center center/cover;
+        position: absolute;
+        height: 562px;
+        width: 100%;
+        z-index: -2;
+        opacity: 2;
+        top: 0px;
+        left: 0px;
+    }
+
+    #home div {
+        font-weight: bolder;
+        color: white;
+        margin: 145px 75px;
+        margin-bottom: 0px;
+    }
+
+    #home h1 {
+        font-size: 4rem;
+    }
+
+    #home h2 {
+        font-size: 2.1rem;
+    }
+
+    #home h3 {
+        font-size: 1.3rem;
+    }
+
+    .btn {
+        padding: 15px;
+        border-radius: 15px;
+        background-color: rgb(37, 170, 28);
+        color: black;
+        margin-top: 30px;
+        margin-left: 250px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        animation: order 2s ease-in-out 1s infinite;
+        animation-fill-mode: forwards;
+        margin-bottom: 131px;
+        border: 1px solid greenyellow;
+    }
+
+    @keyframes order {
+        0% {
+            color: rgb(16, 15, 15);
+            animation-delay: 3s;
+        }
+
+        25% {
+            color: purple;
+            animation-delay: 2s;
+        }
+
+        50% {
+            color: rgb(5, 38, 58);
+            animation-delay: 2s;
+        }
+
+        75% {
+            color: rgb(251, 251, 76);
+            animation-delay: 2s;
+        }
+
+        100% {
+            color: rgb(255, 24, 24);
+            animation-delay: 2s;
+        }
+    }
+
+    .btn:hover {
+        color: black;
+        background-color: rgb(134, 176, 131);
+        border: 1px solid black;
+        cursor: pointer;
+    }
+
+    #about::before {
+        content: "";
+        position: absolute;
+        background: url(about.jpg)no-repeat center center/cover;
+        z-index: -1;
+        height: 412px;
+        width: 100%;
+        opacity: 0.5;
+    }
+
+    #about {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #about h1 {
+        margin: 15px 0px;
+        font-weight: bolder;
+        font-size: 2.5rem;
+    }
+
+    #about .container {
+        display: flex;
+    }
+
+    #about .box {
+        margin: 36px;
+        border: 2px solid brown;
+        border-radius: 20px;
+        background-color: rgb(227, 223, 219);
+        padding: 18px;
+        box-shadow: 4px 4px 3px rgb(174, 174, 174);
+    }
+
+    #about .box img {
+        height: 100px;
+        width: 100px;
+    }
+
+    #discounts {
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+    }
+
+    #discounts h1 {
+        font-size: 2.5rem;
+        font-weight: bolder;
+        margin-top: 15px;
+        text-align: center;
+        color: white;
+    }
+
+    #discounts .container {
+        display: flex;
+        margin: 20px 110px;
+    }
+
+    #discounts .burger {
+        margin: auto;
+        animation: pic 2s ease-in-out 1s infinite;
+        transition: all 0.5s ease-in-out;
+        transition-property: transform;
+    }
+
+    @keyframes pic {
+        50% {
+            transform: rotate(15deg);
+        }
+    }
+
+    #discounts .burger img {
+        height: 218px;
+        width: 328px;
+    }
+
+    #discounts .container .box {
+        display: flex;
+        flex-direction: column;
+        margin-left: 125px;
+
+    }
+
+    #discounts .container .box img {
+        height: 125px;
+        width: 125px;
+        border-radius: 60px;
+    }
+
+    #discounts .container .box .sort {
+        display: flex;
+        flex-direction: row;
+        font-size: 1.6rem;
+    }
+
+    #discounts .container .box .sort p {
+        padding: 48px;
+        color: white;
+        animation: text 1s ease-in-out 1s infinite;
+    }
+
+    @keyframes text {
+        50% {
+            color: yellow;
+        }
+
+        100% {
+            color: rgb(243, 163, 163);
+        }
+    }
+
+    #services {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #services h1 {
+        font-size: 2.5rem;
+        font-weight: bolder;
+        text-align: center;
+    }
+
+    #services .container {
+        display: flex;
+        margin: auto;
+    }
+
+    #services .box {
+        text-align: center;
+        margin: 10px 60px;
+    }
+
+    #services .box img {
+        height: 250px;
+        width: 250px;
+        border-radius: 20px;
+    }
+
+    #services::before {
+        content: "";
+        background: url('about.jpg') no-repeat center center/cover;
+        position: absolute;
+        z-index: -1;
+        height: 350px;
+        width: 100%;
+
+    }
+
+    #log {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(43, 38, 38);
+        color: white;
+    }
+
+    #log h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: bolder;
+    }
+
+    #log .container {
+        display: flex;
+        margin: auto;
+    }
+
+    #log .container img {
+        height: 25px;
+        width: 25px;
+        border-radius: 20px;
+    }
+
+    #log .box {
+        display: flex;
+        margin: 2px 50px;
+    }
+
+    #contact .copy {
+        text-align: center;
+        background-color: black;
+        color: white;
+        font-size: 1.6rem;
+        padding: 4px;
+    }
+
+    @media(max-width:1305px) {
+        #navbar {
+            flex-direction: column;
+        }
+
+        #logo {
+            text-align: center;
+        }
+
+        #title {
+            text-align: center;
+            margin: 0px;
+        }
+
+        ul {
+            margin: 0px;
+            padding: 0px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #nav li {
+            margin: 0px;
+            margin-top: 1px;
+        }
+
+        #nav li a {
+            padding: 12px;
+        }
+
+        #home div {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+        }
+
+        #home h1 {
+            font-size: 1.7rem;
+        }
+
+        #home h2 {
+            font-size: 1.38rem;
+        }
+
+        #home h3 {
+            font-size: 1.18rem;
+        }
+        #home::before{
+            height: 538px;
+        }
+        .btn {
+            
+            padding: 10px;
+            font-size: 0.7rem;
+            margin: 30px 0px;
+        }
+        #about::before{
+            height: 1300px;
+        }
+        #about h1 {
+            font-size: 1.5rem;
+        }
+
+        #about .container {
+            flex-direction: column;
+        }
+
+        #about .box {
+            margin: 20px;
+            padding: 12px;
+        }
+
+        #about .box img {
+            height: 80px;
+            width: 80px;
+        }
+
+        #discounts h1 {
+            font-size: 1.5rem;
+        }
+
+        #discounts .container {
+            flex-direction: column;
+            margin: 8px;
+        }
+
+        #discounts .burger img {
+            height: 130px;
+            width: 130px;
+        }
+
+        #discounts .container .box {
+            margin: auto;
+        }
+
+        #discounts .container .box img {
+            height: 75px;
+            width: 75px;
+        }
+
+        #discounts .container .box .sort {
+            font-size: 1.2rem;
+        }
+
+        #discounts .container .box .sort p {
+            padding: 12px;
+        }
+
+        #services h1 {
+            font-size: 1.5rem;
+        }
+
+        #services .box {
+            margin: 10px 25px;
+        }
+
+        #services .box img {
+            height: 85px;
+            width: 85px;
+        }
+
+        #services h2 {
+            font-size: 17px;
+        }
+
+        #log h1 {
+            font-size: 1.5rem;
+        }
+
+        #log .container {
+            flex-direction: column;
+        }
+
+        #contact .copy {
+            font-size: 1rem;
+        }
+        #services::before{
+            height: 240px;
+        }
+    }
+</style>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="logo.png" alt="logo">
+        </div>
+        <span id="title">
+            King Chef
+        </span>
+        <ul id="nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#discounts">Discounts</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <div>
+            <h1>Welcome! to King Chef</h1>
+            <h2>The #1 food services of kolkata</h2>
+            <h3>Hungry! Don't wait.Stay at home and order your meal now!</h3>
+
+            <button class="btn">Order Now</button>
+        </div>
+    </section>
+    <section id="about">
+        <h1>About Us</h1>
+        <div class="container">
+            <div class="box">
+                <div class="photo"><img src="indian.png" alt="indian food"></div>
+                <h2>Indian Food</h2>
+                <div>we will surve indian food of your choices.It can be of any kind like 'Bengli', 'South Indian',
+                    'Punjabi', 'Gujrati' and many others.You need to just ask us to serve.</div>
+            </div>
+            <div class="box">
+                <div class="photo"><img src="chinese.png" alt="chinese food"></div>
+                <h2>Chinese Food</h2>
+                <div>we can surve chinese food of your choices.We have many vairties of chinese food for you.You need to
+                    just ask us to serve.</div>
+            </div>
+            <div class="box">
+                <div class="photo"><img src="cake.png" alt="cakes & snacks"></div>
+                <h2>Cakes & Snacks</h2>
+                <div>we can provide you delicious cakes of your choices.It can be of any kind like 'birthday cake',
+                    'christmas cake' and many more.You need to just ask us to serve.We also provide various snacks.
+                </div>
+            </div>
+            <div class="box">
+                <div class="photo"><img src="pizza.png" alt="fast food"></div>
+                <h2>Fast Food</h2>
+                <div>we have a large varities of fast food for you.It can be of any kind like 'Pizza', 'Burger',
+                    'Sandwich' and many more.You need to just ask us to serve.</div>
+            </div>
+        </div>
+    </section>
+    <section id="discounts">
+        <h1>Our Discounts</h1>
+        <div class="container">
+            <div class="burger"><img src="hamburger.png" alt="hamburger"></div>
+            <div class="box">
+                <div class="sort">
+                    <img src="delivery.png" alt="delivery">
+                    <p>We are providing free delivery over 400 rupees order!</p>
+                </div>
+                <div class="sort">
+                    <img src="cash.png" alt="cashback">
+                    <p>We are giving 20% for ordering first time!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services">
+        <h1>Our Services</h1>
+        <div class="container">
+            <div class="box">
+                <img src="delivery.png" alt="delivery">
+                <h2>Free delivery in case of late delivery</h2>
+            </div>
+            <div class="box">
+                <img src="cash.png" alt="lowcost">
+                <h2>Good food at low cost</h2>
+            </div>
+        </div>
+    </section>
+    <footer id="contact">
+        <div id="log">
+            <h1>Contact Us</h1>
+            <div class="container">
+                <div class="box">
+                    <img src="whatsapp.png" alt="Whatsapp:">
+                    <p>+918982210100</p>
+                </div>
+                <div class="box">
+                    <img src="mail.png" alt="Email:">
+                    <p>xyz@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="copy">
+            <p>Copyrights &copy; King Chef.com | All rights reserved</p>
+        </div>
+    </footer>
+</body>
+
+</html>
